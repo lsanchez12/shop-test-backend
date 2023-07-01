@@ -19,7 +19,7 @@ class OrderController extends Controller
             return response()->json(['status' => true, 'orders' => Order::with('user','line_items','line_items.product')->paginate(15)], 200);
          } catch (\Throwable $e) {
              \Log::info($e);
-             return response()->json(['status' => false, 'message' => 'Invalid request', 'errors' => $e->getMessage()], 400);
+             return response()->json(['status' => false, 'message' => 'Invalid request', 'errors' => $e->getMessage()], 500);
          }
     }
 
@@ -39,7 +39,7 @@ class OrderController extends Controller
             return response()->json(['status' => true, 'order' => $order], 201);
          } catch (\Throwable $e) {
              \Log::info($e);
-             return response()->json(['status' => false, 'message' => 'Invalid request', 'errors' => $e->getMessage()], 400);
+             return response()->json(['status' => false, 'message' => 'Invalid request', 'errors' => $e->getMessage()], 500);
          }
     }
 
@@ -55,7 +55,7 @@ class OrderController extends Controller
             return response()->json(['status' => true, 'order' => $order], 201);
          } catch (\Throwable $e) {
              \Log::info($e);
-             return response()->json(['status' => false, 'message' => 'Invalid request', 'errors' => $e->getMessage()], 400);
+             return response()->json(['status' => false, 'message' => 'Invalid request', 'errors' => $e->getMessage()], 500);
          }
     }
 
@@ -83,7 +83,7 @@ class OrderController extends Controller
             return response()->json(['status' => true], 200);
          } catch (\Throwable $e) {
              \Log::info($e);
-             return response()->json(['status' => false, 'message' => 'Invalid request', 'errors' => $e->getMessage()], 400);
+             return response()->json(['status' => false, 'message' => 'Invalid request', 'errors' => $e->getMessage()], 500);
          }
     }
 }
