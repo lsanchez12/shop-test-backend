@@ -50,7 +50,7 @@ class ProductController extends Controller
 
          } catch (\Throwable $e) {
              \Log::info($e);
-             return response()->json(['status' => false, 'message' => 'Invalid request', 'errors' => $e->getMessage()], 400);
+             return response()->json(['status' => false, 'message' => 'Invalid request', 'errors' => $e->getMessage()], 500);
          }
     }
 
@@ -66,7 +66,7 @@ class ProductController extends Controller
             return response()->json(['status' => true, 'product' => $product], 200);
          } catch (\Throwable $e) {
              \Log::info($e);
-             return response()->json(['status' => false, 'message' => 'Invalid request', 'errors' => $e->getMessage()], 400);
+             return response()->json(['status' => false, 'message' => 'Invalid request', 'errors' => $e->getMessage()], 500);
          }
     }
 
@@ -93,7 +93,7 @@ class ProductController extends Controller
             return response()->json(['status' => true, 'product' => $product], 200);
          } catch (\Throwable $e) {
              \Log::info($e);
-             return response()->json(['status' => false, 'message' => 'Invalid request', 'errors' => $e->getMessage()], 400);
+             return response()->json(['status' => false, 'message' => 'Invalid request', 'errors' => $e->getMessage()], 500);
          }
     }
 
@@ -109,7 +109,7 @@ class ProductController extends Controller
             return response()->json(['status' => true], 200);
          } catch (\Throwable $e) {
              \Log::info($e);
-             return response()->json(['status' => false, 'message' => 'Invalid request', 'errors' => $e->getMessage()], 400);
+             return response()->json(['status' => false, 'message' => 'Invalid request', 'errors' => $e->getMessage()], 500);
          }
     }
 }
